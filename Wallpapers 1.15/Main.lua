@@ -94,10 +94,10 @@ local pictures = { -- Список обоев.
   "xbox360",
 }
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 145, 35, "Wallpapers", false)) --  окно
+local application, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 145, 35, "Wallpapers", false)) --  окно
 
-mainContainer.menu:addItem(localization.author).onTouch = function() -- вкладка "Автор"
- local container = GUI.addBackgroundContainer(mainContainer, true, true, localization.author1) -- тут все понятно..
+application.menu:addItem(localization.author).onTouch = function() -- вкладка "Автор"
+ local container = GUI.addBackgroundContainer(application, true, true, localization.author1) -- тут все понятно..
 end
 
 local x, y, width, horizontalSpace, verticalSpace = 3, 3, 8, 2, 1 
@@ -128,4 +128,4 @@ window.onResize = function(width, height)
 window:resize(window.width, window.height)
 
 
-mainContainer:drawOnScreen()
+application:draw()
